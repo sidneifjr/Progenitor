@@ -7,9 +7,11 @@ echo "EXAMPLE_API_KEY=1234" > .env
 echo "EXAMPLE_API_KEY=1234" > .env.example
 
 # UI
+echo "# Initializing shadcn..."
 pnpm dlx shadcn-ui@latest init
 
 # Linting
+echo "# Initializing linting tools..."
 pnpm i prettier prettier-plugin-tailwindcss eslint-plugin-simple-import-sort --save-dev
 
 echo '{
@@ -28,7 +30,6 @@ echo '{
   "plugins": [
     "simple-import-sort"
   ],
-  //https://eslint.org/docs/latest/rules/prefer-destructuring
   "rules": {
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
@@ -41,14 +42,16 @@ echo '{
 }' > .eslintrc.json
 
 # Testing
+echo "# Initializing testing tools..."
 pnpm i vitest @testing-library/react --save-dev
 
 # Zod
+echo "# Initializing validation tools..."
 pnpm i zod --save-dev
 
 cd src/
 
-## .env validation
+## Environment Variables Validation
 echo "import { z } from 'zod'
 
 const envSchema = z.object({
@@ -58,13 +61,14 @@ const envSchema = z.object({
 export const env = envSchema.parse(process.env)" > env.ts
 
 # Creating folders
+echo "# Initializing folders..."
 mkdir actions
 mkdir hooks
 mkdir modules
 mkdir tests
 mkdir services
 
-# Boilerplate created!
+echo "# Boilerplate created!"
 
-## Initialize git repo
+# Initialize git repo
 git init
