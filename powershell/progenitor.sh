@@ -68,7 +68,7 @@ mkdir modules
 mkdir tests
 mkdir services
 
-echo "# Boilerplate created!"
+echo "Boilerplate created!"
 
 # Initialize git repo
 git init
