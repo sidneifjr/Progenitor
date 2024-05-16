@@ -33,6 +33,8 @@ First, choose your flavor amongst the available options:
 
 ### Node
 
+`cd /node`
+
 `pnpm i`
 
 `pnpm dev`
