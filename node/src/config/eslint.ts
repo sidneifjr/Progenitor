@@ -1,4 +1,4 @@
-export const eslintConfig = `
+export const eslintConfig = `{
   "extends": [
     "next/core-web-vitals",
     "@rocketseat/eslint-config/next"
