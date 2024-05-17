@@ -20,8 +20,8 @@ export async function initTooling() {
   chdir("src/")
   writeFile("env.ts", zodConfig)
 
-  console.log("# Creating folders...")
   const folders = ["actions", "hooks", "modules", "tests", "services"]
+  console.log("# Creating folders...")
 
   folders.map((folder) => {
     return mkdir(folder)
@@ -29,9 +29,9 @@ export async function initTooling() {
 
   console.log(chalk.bgGreen("Project ready to use!"))
 
-  console.log("/n You can access your project using:")
-  console.log("cd my-app")
-  console.log("code .")
+  console.log("# You can access your project using:")
+  console.log("# cd my-app")
+  console.log("# code .")
 
-  console.log("/n Have fun!")
+  console.log("Have fun!")
 }
