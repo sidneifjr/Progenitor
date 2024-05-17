@@ -11,8 +11,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/bun": "latest",
     "@types/node": "^20.12.12",
-    "@types/bun": "latest"
+    "eslint": "^8.57.0",
+    "@rocketseat/eslint-config": "^2.2.2",
+    "eslint-plugin-simple-import-sort": "^12.1.0"
   },
   "dependencies": {
     "chalk": "^5.3.0"

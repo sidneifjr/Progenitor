@@ -39,7 +39,7 @@ First, choose your flavor amongst the available options:
 
 `pnpm dev`
 
-### Powershell
+### Powershell (legacy)
 
 `./powershell/progenitor.sh`
 
