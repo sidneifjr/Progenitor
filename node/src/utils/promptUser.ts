@@ -1,8 +1,10 @@
-import { existsSync, rmSync } from "node:fs"
+import { existsSync } from "node:fs"
+import { rmdir } from "node:fs/promises"
 
 import { input } from "@inquirer/prompts"
 import { createSpinner } from "nanospinner"
 
+// Permitir que o usuário defina o diretório o projeto será criado!
 export async function promptUser() {
   const dir = "my-app"
 
@@ -17,7 +19,7 @@ export async function promptUser() {
       spinner.start()
 
       // delete pre-existing folder, required admin
-      rmSync(dir, { recursive: true, force: true })
+      await rmdir(dir, { recursive: true })
 
       spinner.success()
     } else {
