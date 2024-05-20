@@ -44,8 +44,6 @@ First, choose your flavor amongst the available options:
 
 `./powershell/progenitor.sh`
 
-// permitir o usuário definir o diretório para onde criar!
-
 ## Useful links
 
 https://stackoverflow.com/questions/15957529/can-i-install-a-npm-package-from-javascript-running-in-node-js
@@ -55,3 +53,5 @@ https://stackoverflow.com/questions/61394928/get-user-input-through-node-js-cons
 https://stackoverflow.com/questions/38061520/node-js-how-to-pause-execution-of-subsequent-lines-of-code-while-waiting-for-u
 
 https://codedamn.com/news/nodejs/how-to-get-current-directory-in-node-js
+
+https://www.npmjs.com/package/ora#why-does-the-spinner-freeze
