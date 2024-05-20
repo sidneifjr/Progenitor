@@ -9,11 +9,12 @@ import { zodConfig } from "@/config/zod"
 import { runNpmCommand } from "@/utils/run-npm-command"
 
 export async function initTooling() {
+  console.log("# Configuring tooling...")
+
   runNpmCommand(
     "pnpm i prettier prettier-plugin-tailwindcss eslint-plugin-simple-import-sort @rocketseat/eslint-config vitest @testing-library/react zod --save-dev",
   )
 
-  console.log("# Configuring tooling...")
   writeFile(".prettierrc", prettierConfig)
   writeFile(".eslintrc.json", eslintConfig)
 
@@ -27,11 +28,15 @@ export async function initTooling() {
     return mkdir(folder)
   })
 
-  console.log(chalk.bgGreen("Project ready to use!"))
+  console.log()
 
-  console.log("# You can access your project using:")
-  console.log("# cd my-app")
-  console.log("# code .")
-
-  console.log("Have fun!")
+  console.log(`
+  # ${chalk.bgGreen("Project ready to use!")}
+  # You can access your project using:
+  #
+  # cd my-app
+  # code .
+  #
+  # Have fun!
+  `)
 }

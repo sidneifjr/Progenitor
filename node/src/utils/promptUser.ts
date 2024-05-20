@@ -23,7 +23,7 @@ export async function promptUser() {
 
       spinner.success()
     } else {
-      console.log("SHUTTING DOWN...")
+      console.log("# Shutting down...")
 
       process.exit(0)
     }
