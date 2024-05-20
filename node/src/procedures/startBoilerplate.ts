@@ -18,4 +18,5 @@ export async function startBoilerplate() {
 
   console.log("# Initializing shadcn...")
   runNpmCommand("pnpm dlx shadcn-ui@latest init")
+  runNpmCommand("pnpm dlx shadcn-ui@latest add")
 }
