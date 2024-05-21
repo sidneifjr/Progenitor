@@ -1,8 +1,8 @@
 # Progenitor
 
-A relatively simple Node script, for bootstraping a frontend project under my usual requirements.
+A relatively simple Node CLI, meant for bootstraping a frontend project under my usual requirements.
 
-Opinionated, for convenience and ease of use.
+Opinionated, for simplicity and ease of usage.
 
 ## Motivation
 
@@ -51,3 +51,5 @@ https://stackoverflow.com/questions/10011011/using-node-js-how-do-i-read-a-json-
 https://chatgpt.com/c/3014b422-2e2f-4d19-ae9f-5dc3a00ba625
 
 https://stackoverflow.com/questions/40424298/how-to-get-os-username-in-nodejs
+
+https://stackoverflow.com/a/18427652
