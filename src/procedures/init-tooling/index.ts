@@ -14,9 +14,7 @@ export async function initTooling() {
   )
 
   await createConfigFiles()
-
   await createFolders()
-
   await createTestPlaceholders()
 
   console.log(chalk.bgGreen("Project ready to use!"))

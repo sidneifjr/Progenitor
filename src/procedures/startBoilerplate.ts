@@ -3,7 +3,7 @@ import { chdir } from "node:process"
 
 import chalk from "chalk"
 
-import { promptUser } from "@/utils/promptUser"
+import { promptUser } from "@/utils/prompt-user"
 import { runNpmCommand } from "@/utils/run-npm-command"
 
 export async function startBoilerplate() {
