@@ -1,3 +1,4 @@
+import { readFile, writeFile } from "node:fs/promises"
 import { chdir } from "node:process"
 
 import chalk from "chalk"
@@ -15,6 +16,19 @@ export async function startBoilerplate() {
   )
 
   chdir("my-app")
+
+  const data = await readFile("package.json", { encoding: "utf8" })
+  const parsedData = JSON.parse(data)
+
+  parsedData.scripts = {
+    ...parsedData.scripts,
+    dev: "next dev --turbo",
+    test: "vitest",
+  }
+
+  await writeFile("package.json", JSON.stringify(parsedData, null, 2), {
+    encoding: "utf8",
+  })
 
   console.log("# Initializing shadcn...")
   runNpmCommand("pnpm dlx shadcn-ui@latest init")
