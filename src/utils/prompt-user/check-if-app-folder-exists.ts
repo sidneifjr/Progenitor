@@ -1,23 +1,10 @@
 import { existsSync } from "node:fs"
 import { rmdir } from "node:fs/promises"
-import os from "node:os"
-import { chdir } from "node:process"
 
 import { input } from "@inquirer/prompts"
 import { createSpinner } from "nanospinner"
 
-async function setDirectory() {
-  const { username } = os.userInfo()
-
-  const directory = await input({
-    message: "Where do you want to install your project?",
-    default: `C:\\Users\\${username}\\Desktop`,
-  })
-
-  chdir(directory)
-}
-
-async function checkIfAppFolderExists() {
+export async function checkIfAppFolderExists() {
   const appDir = "my-app"
 
   const spinner = createSpinner("Deleting old folders...")
@@ -42,9 +29,4 @@ async function checkIfAppFolderExists() {
 
     return answers
   }
-}
-
-export async function promptUser() {
-  await setDirectory()
-  await checkIfAppFolderExists()
 }

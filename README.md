@@ -49,3 +49,5 @@ https://www.npmjs.com/package/ora#why-does-the-spinner-freeze
 https://stackoverflow.com/questions/10011011/using-node-js-how-do-i-read-a-json-file-into-server-memory
 
 https://chatgpt.com/c/3014b422-2e2f-4d19-ae9f-5dc3a00ba625
+
+https://stackoverflow.com/questions/40424298/how-to-get-os-username-in-nodejs
