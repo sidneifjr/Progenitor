@@ -1,5 +1,5 @@
 import { mkdir, writeFile } from "node:fs/promises"
-import { chdir, cwd } from "node:process"
+import { chdir } from "node:process"
 
 import chalk from "chalk"
 
@@ -13,6 +13,25 @@ import {
 import { zodConfig } from "@/config/zod"
 import { runNpmCommand } from "@/utils/run-npm-command"
 
+const files = [
+  {
+    filename: ".prettierrc",
+    config: prettierConfig,
+  },
+  {
+    filename: ".eslintrc.json",
+    config: eslintConfig,
+  },
+  {
+    filename: "vitest.config.ts",
+    config: vitestConfig,
+  },
+]
+
+async function createFile(name: string, content: string) {
+  await writeFile(name, content)
+}
+
 export async function initTooling() {
   console.log("# Configuring tooling...")
 
@@ -20,41 +39,40 @@ export async function initTooling() {
     "pnpm i prettier prettier-plugin-tailwindcss eslint-plugin-simple-import-sort @rocketseat/eslint-config vitest @vitejs/plugin-react jsdom @testing-library/react zod --save-dev",
   )
 
-  await writeFile(".prettierrc", prettierConfig)
-  await writeFile(".eslintrc.json", eslintConfig)
-  await writeFile("vitest.config.ts", vitestConfig)
+  files.map(async (file) => {
+    const { filename, config } = file
 
-  // to do: add a test script to your package.json
+    return await createFile(filename, config)
+  })
+
   chdir("src/")
   await writeFile("env.ts", zodConfig)
 
   const folders = ["actions", "hooks", "modules", "tests", "services"]
   console.log("# Creating folders...")
 
-  folders.map(async (folder) => {
+  // 'for of' loop is meant to guarantee that my folders are created sequentially.
+  for (const folder of folders) {
     await mkdir(folder)
-  })
+  }
 
-  console.log("current working directory:", cwd()) // returns "current working directory D:\Projetos\Personal\progenitor\node\my-app\src"
-
-  // review: cannot find "tests" folder due to incompatibility with promises?
   chdir("tests")
   await writeFile("page.test.tsx", vitestInitialSpec)
 
-  // to do: inside 'src' folder, i'll enter the 'app' folder and modify the contents of the page.tsx file.
+  // inside 'app' folder, i'll create a 'example-for-tests' folder and add contents meant to testing a 'page.tsx' file.
   chdir("../app")
-  await mkdir("placeholder")
+  await mkdir("example-for-tests")
 
-  chdir("placeholder/")
+  chdir("example-for-tests/")
   await writeFile("page.tsx", vitestTestPage)
 
   console.log(`
-  # ${chalk.bgGreen("Project ready to use!")}
-  # You can access your project using:
-  #
-  # cd my-app
-  # code .
-  #
-  # Have fun!
+# ${chalk.bgGreen("Project ready to use!")}
+# You can access your project using:
+#
+# cd my-app
+# code .
+#
+# Have fun!
   `)
 }
