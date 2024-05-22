@@ -4,6 +4,18 @@ A relatively simple Node CLI, meant for bootstraping a frontend project under my
 
 Opinionated, for simplicity and ease of usage.
 
+## Stack
+
+- React
+- Next.js (with Turbo)
+- TailwindCSS
+- shadcn
+- ESLint/Prettier
+- Vitest
+- Testing Library
+- Cypress
+- Zod
+
 ## Motivation
 
 This script was created with the intent of reducing repetition.
