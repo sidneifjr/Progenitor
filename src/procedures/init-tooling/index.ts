@@ -17,5 +17,8 @@ export async function initTooling() {
   await createFolders()
   await createTestPlaceholders()
 
+  console.log("# Linting project files...")
+  runNpmCommand("pnpm lint")
+
   console.log(chalk.bgGreen("Project ready to use!"))
 }
