@@ -16,6 +16,7 @@ async function editPackageJSON() {
     dev: "next dev --turbo",
     lint: "next lint --fix",
     test: "vitest",
+    cy: "cypress open -b chrome --port 8080 --config baseUrl=https://localhost:3000",
   }
 
   await writeFile("package.json", JSON.stringify(parsedData, null, 2), {
@@ -24,9 +25,6 @@ async function editPackageJSON() {
 }
 
 async function editNextConfig() {
-  const data = await readFile("next.config.mjs", { encoding: "utf8" })
-  console.log(data)
-
   await writeFile("next.config.mjs", nextConfig, { encoding: "utf8" })
 }
 
