@@ -5,7 +5,7 @@ export const nextConfig = `/** @type {import('next').NextConfig} */
     },
 
     eslint: {
-      ignoreBuildErrors: true,
+      ignoreDuringBuilds: true,
     },
   }
 
