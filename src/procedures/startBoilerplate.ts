@@ -16,7 +16,7 @@ async function editPackageJSON() {
     dev: "next dev --turbo",
     lint: "next lint --fix",
     test: "vitest",
-    cy: "cypress open -b chrome --port 8080 --config baseUrl=https://localhost:3000",
+    cy: "cypress open -b chrome --port 8080",
   }
 
   await writeFile("package.json", JSON.stringify(parsedData, null, 2), {

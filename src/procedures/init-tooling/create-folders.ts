@@ -1,4 +1,7 @@
-import { mkdir } from "node:fs/promises"
+import { mkdir, writeFile } from "node:fs/promises"
+import { chdir } from "node:process"
+
+import { api } from "@/config/data/api"
 
 export async function createFolders() {
   const folders = ["actions", "hooks", "modules", "tests", "services"]
@@ -7,4 +10,7 @@ export async function createFolders() {
   for (const folder of folders) {
     await mkdir(folder)
   }
+
+  chdir("modules")
+  writeFile("api.tsx", api)
 }
