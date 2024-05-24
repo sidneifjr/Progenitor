@@ -1,7 +1,21 @@
-export const zodConfig = `import { z } from 'zod'
+export const zodConfig = `import { z } from "zod"
 
 const envSchema = z.object({
   EXAMPLE_API_KEY: z.string(),
 })
 
-export const env = envSchema.parse(process.env)`
+export const parsedEnv = envSchema.safeParse(process.env)
+
+if (!parsedEnv.success) {
+  console.log(
+    "Invalid environment variables",
+    parsedEnv.error.flatten().fieldErrors,
+  )
+
+  throw new Error(
+    "Invalid environment variables. Have you forgotten to create your .env file?",
+  )
+}
+
+export const env = parsedEnv.data
+`
