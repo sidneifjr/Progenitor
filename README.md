@@ -4,7 +4,7 @@ A relatively simple Node CLI, meant for bootstraping a frontend project under my
 
 Opinionated, for simplicity and ease of usage.
 
-## Stack
+The CLI creates a project based on the following technologies:
 
 - React
 - Next.js (with Turbo)
@@ -16,11 +16,19 @@ Opinionated, for simplicity and ease of usage.
 - Cypress
 - Zod
 
+## Stack
+
+- Node.js
+- TypeScript
+- TSX
+- Clack
+- ESLint
+
 ## Motivation
 
 This script was created with the intent of reducing repetition.
 
-Several of my projects reuse the same overall structure, based on some key development patterns:
+Several projects reuse the same overall structure, based on some key development patterns:
 
 1) SOLID;
 2) Composition Pattern;
@@ -30,9 +38,9 @@ It's not meant as a "single source of truth", per se; you can always add whateve
 
 ## Decisions
 
-**Package manager**: PNPM is the best option due to its dependency caching allowing package reusage between projects, saving a lot of space over time. It's also very useful during testing, avoiding unnecessary bandwidth traffic.
+**Package manager**: Pnpm is the best option due to its dependency caching allowing package reusage between projects, saving a lot of space over time. It's also very useful during testing, avoiding unnecessary bandwidth traffic.
 
-**Runtime**: Bun was initially chosen for its native support of TypeScript, speed and usability. However, due to its incompatibility with Inquirer, Node and TSX was needed.
+**Runtime**: Bun was initially chosen for its native support of TypeScript, speed and usability. However, due to current compatibility issues with native Node.js APIs with Inquirer, Node and TSX was needed.
 
 ## Dependencies
 

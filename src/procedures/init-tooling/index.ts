@@ -1,4 +1,4 @@
-import chalk from "chalk"
+import { intro } from "@clack/prompts"
 
 import { runNpmCommand } from "@/utils/run-npm-command"
 
@@ -7,7 +7,7 @@ import { createFolders } from "./create-folders"
 import { createTestPlaceholders } from "./create-test-placeholders"
 
 export async function initTooling() {
-  console.log("# Configuring tooling...")
+  intro("Configuring tooling...")
 
   runNpmCommand(
     "pnpm i prettier prettier-plugin-tailwindcss eslint-plugin-simple-import-sort @rocketseat/eslint-config vitest @vitejs/plugin-react jsdom @testing-library/react zod cypress --save-dev",
@@ -17,11 +17,9 @@ export async function initTooling() {
   await createFolders()
   await createTestPlaceholders()
 
-  console.log("# Linting project files...")
+  intro("Linting project files...")
   runNpmCommand("pnpm lint")
 
-  console.log("# Starting up Cypress...")
+  intro("Starting up Cypress...")
   runNpmCommand("pnpm cy")
-
-  console.log(chalk.bgGreen("Project ready to use!"))
 }

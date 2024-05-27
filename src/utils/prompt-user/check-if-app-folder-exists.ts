@@ -1,30 +1,30 @@
 import { existsSync } from "node:fs"
-import { rmdir } from "node:fs/promises"
+import { rm } from "node:fs/promises"
 
-import { input } from "@inquirer/prompts"
-import { createSpinner } from "nanospinner"
+import { cancel, isCancel, spinner, text } from "@clack/prompts"
 
 export async function checkIfAppFolderExists() {
   const appDir = "my-app"
 
-  const spinner = createSpinner("Deleting old folders...")
+  const s = spinner()
 
   if (existsSync(appDir)) {
-    const answers = await input({
+    const answers = await text({
       message: "Directory already exists. Do you want to replace it? (y/n)",
     })
 
     if (answers === "y") {
-      spinner.start()
+      s.start("Deleting old folders...")
 
       // delete pre-existing folder, required admin
-      await rmdir(appDir, { recursive: true })
+      await rm(appDir, { recursive: true })
 
-      spinner.success()
+      s.stop("Deleting old folders...")
     } else {
-      console.log("# Shutting down...")
-
-      process.exit(0)
+      if (isCancel(answers)) {
+        cancel("Operation cancelled.")
+        process.exit(0)
+      }
     }
 
     return answers

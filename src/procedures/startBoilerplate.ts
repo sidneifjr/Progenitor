@@ -1,7 +1,7 @@
 import { readFile, writeFile } from "node:fs/promises"
 import { chdir } from "node:process"
 
-import chalk from "chalk"
+import { intro } from "@clack/prompts"
 
 import { nextConfig } from "@/config/next-config"
 import { promptUser } from "@/utils/prompt-user"
@@ -29,9 +29,9 @@ async function editNextConfig() {
 }
 
 export async function startBoilerplate() {
-  console.log(chalk.bgBlue("# Initializing boilerplate..."))
-
   await promptUser()
+
+  intro("Initializing Next.js template...")
 
   runNpmCommand(
     "pnpm dlx create-next-app@latest --use-pnpm --typescript --tailwind --eslint --src-dir --app --import-alias @/*",
@@ -42,7 +42,7 @@ export async function startBoilerplate() {
   await editPackageJSON()
   await editNextConfig()
 
-  console.log("# Initializing shadcn...")
+  intro("Initializing shadcn...")
 
   runNpmCommand(
     "pnpm dlx shadcn-ui@latest init && pnpm dlx shadcn-ui@latest add",
