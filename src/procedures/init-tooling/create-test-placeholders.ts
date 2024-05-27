@@ -4,7 +4,7 @@ import { chdir } from "node:process"
 import { vitestInitialSpec, vitestTestPage } from "@/config/vitest"
 
 export async function createTestPlaceholders() {
-  chdir("tests")
+  chdir("../tests")
   await writeFile("page.test.tsx", vitestInitialSpec)
 
   // inside 'app' folder, i'll create a 'example-for-tests' folder and add contents meant to testing a 'page.tsx' file.
