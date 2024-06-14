@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { intro, outro } from "@clack/prompts"
 
 import { createEnvVariables } from "@/procedures/createEnvVariables"
