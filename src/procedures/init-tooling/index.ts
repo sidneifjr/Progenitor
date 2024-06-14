@@ -17,9 +17,6 @@ export async function initTooling() {
   await createFolders()
   await createTestPlaceholders()
 
-  intro("Linting project files...")
-  runNpmCommand("pnpm lint")
-
-  intro("Starting up Cypress...")
-  runNpmCommand("pnpm cy")
+  intro("Linting project files and starting up Cypress")
+  runNpmCommand("pnpm lint && pnpm cy")
 }
