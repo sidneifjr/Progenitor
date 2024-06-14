@@ -52,13 +52,10 @@ This script was created with the intent of reducing repetition, since several pr
 
 ## To do
 
-- [] Move api.tsx to services.
-
-- [ ] Add 'typography' folder to components.
-
+- [x] Move api.tsx to services.
+- [x] Add 'typography' folder to components.
 - [ ] Github bots that check for updates, then open a PR. (Dependabot, Github Actions?)
-
-- [ ] Installable npm package.
+- [ ] Installable npm package (once it is good enough).
 
 ## Useful links
 
