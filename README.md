@@ -4,7 +4,7 @@ A relatively simple Node CLI, meant for bootstraping a frontend project under my
 
 Opinionated, for simplicity and ease of usage.
 
-The CLI creates a project based on the following technologies:
+The CLI setups a project based on the following technologies:
 
 - React
 - Next.js (with Turbo)
@@ -26,19 +26,15 @@ The CLI creates a project based on the following technologies:
 
 ## Motivation
 
-This script was created with the intent of reducing repetition.
-
-Several projects reuse the same overall structure, based on some key development patterns:
+This script was created with the intent of reducing repetition, since several projects on the market have similar overall structure, based on some key development patterns:
 
 1) SOLID;
 2) Composition Pattern;
 3) Custom Hooks;
 
-It's not meant as a "single source of truth", per se; you can always add whatever libraries you need, according to your use cases.
-
 ## Decisions
 
-**Package manager**: Pnpm is the best option due to its dependency caching allowing package reusage between projects, saving a lot of space over time. It's also very useful during testing, avoiding unnecessary bandwidth traffic.
+**Package manager**: Pnpm is the best option due to its dependency caching, that allows package reusage between projects and saving a lot of space over time. It's very useful during testing, avoiding unnecessary bandwidth traffic.
 
 **Runtime**: Bun was initially chosen for its native support of TypeScript, speed and usability. However, due to current compatibility issues with native Node.js APIs with Inquirer, Node and TSX was needed.
 
@@ -53,6 +49,16 @@ It's not meant as a "single source of truth", per se; you can always add whateve
 `pnpm i`
 
 `pnpm dev`
+
+## To do
+
+- [] Move api.tsx to services.
+
+- [ ] Add 'typography' folder to components.
+
+- [ ] Github bots that check for updates, then open a PR. (Dependabot, Github Actions?)
+
+- [ ] Installable npm package.
 
 ## Useful links
 
