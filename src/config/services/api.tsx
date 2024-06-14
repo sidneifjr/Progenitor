@@ -1,6 +1,8 @@
 export const api = `import { env } from '@/env'
 
 /**
+ * A fetch API wrapper.
+ * 
  * Example:
  * 
  * async function getProducts(): Promise<Product[]> {
@@ -9,8 +11,9 @@ export const api = `import { env } from '@/env'
  *  return products
  * }
  **/
+
 export async function api(path: string, init?: RequestInit) {
-  const baseUrl = env.NEXT_PUBLIC_API_BASE_URL
+  const baseUrl = env.PUBLIC_USER_API
   const url = new URL(path, baseUrl)
 
   try {
