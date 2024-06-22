@@ -1,14 +1,11 @@
-import os from "node:os"
 import { chdir } from "node:process"
 
 import { cancel, isCancel, text } from "@clack/prompts"
 
 export async function setDirectory() {
-  const { username } = os.userInfo()
-
   const directory = (await text({
     message: "Where do you want to install your project?",
-    initialValue: `C:\\Users\\${username}\\Desktop`,
+    initialValue: `D:\\Projetos\\Personal`,
 
     validate(value) {
       if (value.length === 0) return "Value is required!"
