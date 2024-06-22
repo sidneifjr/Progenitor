@@ -4,7 +4,6 @@ import { chdir } from "node:process"
 import { intro } from "@clack/prompts"
 
 import { nextConfig } from "@/config/next-config"
-import { promptUser } from "@/utils/prompt-user"
 import { runNpmCommand } from "@/utils/run-npm-command"
 
 async function editPackageJSON() {
@@ -29,8 +28,6 @@ async function editNextConfig() {
 }
 
 export async function startBoilerplate() {
-  await promptUser()
-
   intro("Initializing Next.js template...")
 
   runNpmCommand(
