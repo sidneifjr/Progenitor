@@ -13,7 +13,7 @@ import { paragraph } from "@/config/typography/paragraph"
 import { small } from "@/config/typography/small"
 
 export async function createFolders() {
-  const folders = ["actions", "hooks", "tests", "services", "modules"]
+  const folders = ["actions", "hooks", "tests", "services", "modules", "assets"]
 
   const typographyComponents = [
     {
