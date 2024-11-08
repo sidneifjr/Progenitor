@@ -41,7 +41,5 @@ export async function startBoilerplate() {
 
   intro("Initializing shadcn...")
 
-  runNpmCommand(
-    "pnpm dlx shadcn-ui@latest init && pnpm dlx shadcn-ui@latest add",
-  )
+  runNpmCommand("pnpm dlx shadcn@latest init && pnpm dlx shadcn@latest add")
 }
