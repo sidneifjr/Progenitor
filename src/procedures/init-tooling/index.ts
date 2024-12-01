@@ -10,7 +10,7 @@ export async function initTooling() {
   intro("Configuring tooling...")
 
   runNpmCommand(
-    "pnpm add prettier prettier-plugin-tailwindcss eslint-plugin-simple-import-sort @rocketseat/eslint-config vitest @vitejs/plugin-react @tanstack/react-query @tanstack/eslint-plugin-query jsdom @testing-library/react @testing-library/jest-dom zod cypress --save-dev",
+    "pnpm add prettier prettier-plugin-tailwindcss eslint-plugin-simple-import-sort @rocketseat/eslint-config vitest @vitejs/plugin-react @tanstack/react-query @tanstack/eslint-plugin-query eslint-plugin-sonarjs jsdom @testing-library/react @testing-library/jest-dom zod cypress --save-dev",
   )
 
   await createConfigFiles()

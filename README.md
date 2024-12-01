@@ -53,12 +53,13 @@ This script was created with the intent of reducing repetition, since several pr
 
 ## To do
 
-- [x] Move api.tsx to services.
-- [x] Add 'typography' folder to components.
+- [x] Move api.tsx to services;
+- [x] Add 'typography' folder to components;
 - [x] React Query and corresponding config file (along with staleTime);
 - [x] @tanstack/eslint-plugin-query;
-- [ ] Redux Toolkit;
-- [ ] eslint-plugin-sonarjs;
+- [x] eslint-plugin-sonarjs;
+- [ ] Option for Redux Toolkit;
+- [ ] Open project in VSCode after creation;
 - [ ] Github bots that check for updates, then open a PR. (Dependabot, Github Actions?)
 - [ ] Installable npm package (once it is good enough).
 
