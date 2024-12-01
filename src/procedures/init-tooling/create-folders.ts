@@ -2,6 +2,7 @@ import { existsSync } from "node:fs"
 import { mkdir, writeFile } from "node:fs/promises"
 import { chdir } from "node:process"
 
+import { reactQuery } from "@/config/react-query"
 import { api } from "@/config/services/api"
 import { h1 } from "@/config/typography/h1"
 import { h2 } from "@/config/typography/h2"
@@ -57,7 +58,10 @@ export async function createFolders() {
 
   if (existsSync("services")) {
     chdir("services")
+
     await writeFile("api.tsx", api)
+    await writeFile("react-query.ts", reactQuery)
+
     chdir("../")
   }
 

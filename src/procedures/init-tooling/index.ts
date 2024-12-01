@@ -10,13 +10,14 @@ export async function initTooling() {
   intro("Configuring tooling...")
 
   runNpmCommand(
-    "pnpm i prettier prettier-plugin-tailwindcss eslint-plugin-simple-import-sort @rocketseat/eslint-config vitest @vitejs/plugin-react jsdom @testing-library/react @testing-library/jest-dom zod cypress --save-dev",
+    "pnpm add prettier prettier-plugin-tailwindcss eslint-plugin-simple-import-sort @rocketseat/eslint-config vitest @vitejs/plugin-react @tanstack/react-query @tanstack/eslint-plugin-query jsdom @testing-library/react @testing-library/jest-dom zod cypress --save-dev",
   )
 
   await createConfigFiles()
   await createFolders()
   await createTestPlaceholders()
 
-  intro("Linting project files and starting up Cypress")
-  runNpmCommand("pnpm lint && pnpm cy")
+  intro("Linting project files")
+  runNpmCommand("pnpm lint")
+  // runNpmCommand("pnpm lint && pnpm cy")
 }

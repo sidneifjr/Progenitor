@@ -10,6 +10,7 @@ The CLI setups a project based on the following technologies:
 - Next.js (with Turbo)
 - TailwindCSS
 - shadcn
+- React Query
 - ESLint/Prettier
 - Vitest
 - Testing Library
@@ -54,6 +55,10 @@ This script was created with the intent of reducing repetition, since several pr
 
 - [x] Move api.tsx to services.
 - [x] Add 'typography' folder to components.
+- [x] React Query and corresponding config file (along with staleTime);
+- [x] @tanstack/eslint-plugin-query;
+- [ ] Redux Toolkit;
+- [ ] eslint-plugin-sonarjs;
 - [ ] Github bots that check for updates, then open a PR. (Dependabot, Github Actions?)
 - [ ] Installable npm package (once it is good enough).
 
