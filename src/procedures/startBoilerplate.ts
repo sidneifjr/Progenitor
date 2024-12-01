@@ -24,7 +24,7 @@ async function editPackageJSON() {
 }
 
 async function editNextConfig() {
-  await writeFile("next.config.mjs", nextConfig, { encoding: "utf8" })
+  await writeFile("next.config.ts", nextConfig, { encoding: "utf8" })
 }
 
 export async function startBoilerplate() {
